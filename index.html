@@ -943,17 +943,11 @@ function openSubpage(parentName, subName, parentIdx){
       </div>
       <div class="content-card-badge">${item.badge}</div>`;
   if(item.url){
-    c.style.cursor='pointer';
-    c.addEventListener('click', function(){
-      const a = document.createElement('a');
-      a.href = item.url;
-      a.download = item.name + '.pdf';
-      a.style.display = 'none';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    });
-  }
+  c.style.cursor='pointer';
+  c.addEventListener('click', function(){
+    window.open(item.url, '_blank');
+  });
+}
     grid.appendChild(c);
   });
   
@@ -969,7 +963,7 @@ function closeSubpage(){
 function getContentItems(subName, m){
   const templates = {
     'Legaledge':[
-      {icon:'⚖️',name:'Mock (Booklet) 09 – 2027',meta:'120 Questions · 2 Hours',badge:' mb', url: 'https://drive.google.com/uc?export=download&id=1Ypb2i3dPv0plyC-yknSF_9SwTVjI86YX'},
+      {icon:'⚖️',name:'Mock (Booklet) 09 – 2027',meta:'120 Questions · 2 Hours',badge:' mb', url: 'https://drive.google.com/uc?export=download&confirm=t&id=1Ypb2i3dPv0plyC-yknSF_9SwTVjI86YX'},
       {icon:'⚖️',name:'Mock (AnsKey) 09 – 2027',meta:'120 Questions · 2 Hours',badge:' mb'},
       {icon:'⚖️',name:'Mock (Booklet) 08 – 2027',meta:'120 Questions · 2 Hours',badge:' mb'},
       {icon:'⚖️',name:'Mock (AnsKey) 08 – 2027',meta:'120 Questions · 2 Hours',badge:' mb'},
